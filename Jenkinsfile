@@ -7,12 +7,12 @@ pipeline {
     stages {
         stage('compile') {
             steps {
-                mvn compile
+                sh 'mvn compile'
             }
         }
          stage('Junit') {
             steps {
-                mvn test
+                sh 'mvn test'
             }
         }
          stage('deploy') {
