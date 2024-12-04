@@ -15,9 +15,14 @@ pipeline {
                powershell 'mvn test'
             }
         }
-         stage('deploy') {
+        stage('package') {
             steps {
-                echo 'deploy steps'
+               powershell 'mvn -DskipTests clean package'
+            }
+        }
+         stage('clean workspace') {
+            steps {
+                cleanWs()
             }
         }
     }
