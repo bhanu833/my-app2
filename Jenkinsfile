@@ -20,6 +20,11 @@ pipeline {
                powershell 'mvn -DskipTests clean package'
             }
         }
+        stage('upload package to nexus') {
+            steps {
+               powershell 'mvn -DskipTests deploy'
+            }
+        }
          stage('clean workspace') {
             steps {
                 cleanWs()
