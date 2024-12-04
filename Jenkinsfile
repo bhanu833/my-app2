@@ -7,12 +7,12 @@ pipeline {
     stages {
         stage('compile') {
             steps {
-                sh 'mvn compile'
+                powershell 'mvn compile'
             }
         }
          stage('Junit') {
             steps {
-                sh 'mvn test'
+               powershell 'mvn test'
             }
         }
          stage('deploy') {
