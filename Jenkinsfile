@@ -2,7 +2,9 @@ pipeline {
     agent {
   label 'jenkins-master'
 }
-
+timestamps {
+    // some block
+}
 
     stages {
         stage('compile') {
