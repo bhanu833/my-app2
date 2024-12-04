@@ -10,9 +10,14 @@ pipeline {
                 git branch: 'feature1', url: 'https://github.com/bhanu833/my-app2.git'
             }
         }
-         stage('test') {
+        stage('compile') {
             steps {
-                echo 'test steps'
+                mvn compile
+            }
+        }
+         stage('Junit') {
+            steps {
+                mvn test
             }
         }
          stage('deploy') {
